@@ -6,13 +6,13 @@ func (root *Node) InorderValues(actions ...func(*Node)) []int {
 
 	left, right := root.Left, root.Right
 
-	if left != nil {
+	if !left.IsEmpty() {
 		values = append(values, left.InorderValues(actions...)...)
 	}
 
 	values = append(values, process(root, actions...))
 
-	if right != nil {
+	if !right.IsEmpty() {
 		values = append(values, right.InorderValues(actions...)...)
 	}
 
@@ -27,11 +27,11 @@ func (root *Node) PreorderValues(actions ...func(*Node)) []int {
 
 	values = append(values, process(root, actions...))
 
-	if left != nil {
+	if !left.IsEmpty() {
 		values = append(values, left.InorderValues(actions...)...)
 	}
 
-	if right != nil {
+	if !right.IsEmpty() {
 		values = append(values, right.InorderValues(actions...)...)
 	}
 
@@ -44,11 +44,11 @@ func (root *Node) PostorderValues(actions ...func(*Node)) []int {
 
 	left, right := root.Left, root.Right
 
-	if left != nil {
+	if !left.IsEmpty() {
 		values = append(values, left.InorderValues(actions...)...)
 	}
 
-	if right != nil {
+	if !right.IsEmpty() {
 		values = append(values, right.InorderValues(actions...)...)
 	}
 

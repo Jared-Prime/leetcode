@@ -35,7 +35,7 @@ func (root *Node) Search(target, order int) (*Node, error) {
 		return nil, UnknownOrdering(order)
 	}
 
-	if found == nil {
+	if found.IsEmpty() {
 		return found, NotFound(target)
 	}
 

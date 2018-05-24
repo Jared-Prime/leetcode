@@ -20,3 +20,8 @@ func (node *Node) String() string {
 func (node Node) IsLeaf() bool {
 	return node.Left == nil && node.Right == nil
 }
+
+// IsEmpty checks if the pointer is nil
+func (node *Node) IsEmpty() bool {
+	return node == nil
+}
